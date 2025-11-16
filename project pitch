@@ -1,0 +1,154 @@
+# Image-Classification-Using-Fashion-MNIST
+## 🧵 Project Pitch: Image Classification Using Fashion-MNIST
+### 📌 1. Business Problem Scenario
+#### Business Problem
+- In e-commerce retail, product misclassification results in inaccurate catalogs, poor search results, and inefficient inventory management. With thousands of new product images uploaded daily, manual tagging is slow, error-prone, and inconsistent.
+This project aims to build an automated image classification model to categorize clothing items using machine learning.
+
+#### Stakeholders
+- E-commerce Operations Team – reduced manual tagging workload
+- Inventory & Supply Chain Team – improved stock categorization
+- Marketing / Recommendation Systems Team – higher-quality inputs
+- Customers – improved search and product discovery
+- Executives – reduced costs and increased conversion rates
+
+#### Business Goals
+- Reduce mislabeling errors by ≥25%
+- Improve catalog accuracy for inventory visibility
+- Enhance customer search accuracy
+- Reduce returns related to incorrect product details
+
+#### Why Machine Learning?
+- Fashion image classification has too much variation for rule-based systems. Machine learning, particularly deep learning, can automatically detect complex visual patterns (texture, shape, edges) and scale to thousands of images per day with consistent quality.
+
+### 📁 Dataset Description
+- Dataset: Fashion-MNIST
+- Source: TensorFlow / Keras / Kaggle
+- Size: 70,000 grayscale images (28×28 px)
+       - 60,000 training
+       - 10,000 test
+
+- Classes (10):
+        - T-shirt/top, Trouser, Pullover, Dress, Coat, Sandal, Shirt, Sneaker, Bag, Ankle Boot
+
+- Relevancy:
+       - The dataset represents real-world clothing categories and serves as an ideal testing ground for building an automated classification pipeline that can later be applied to actual product images.
+
+### 🎯 Success Metrics
+- Technical Metrics
+       - Accuracy (primary)
+       - F1-score (macro)
+       - Confusion matrix for class-level errors
+- Business Metrics
+      - Reduction in manual tagging time
+      - Fewer catalog errors
+      - Improved search recommendation accuracy
+      - Decrease in product returns from mismatched descriptions
+
+### 🧩 2. Problem-Solving Process
+#### A. Data Acquisition & Understanding
+     - Load Fashion-MNIST using Keras API
+     - Inspect shapes, data types, and pixel properties
+     - Check class distribution
+     - Early visuals:
+     - Random image grids
+     - Pixel intensity histograms
+     - Class countplots
+
+#### B. Data Preparation & Feature Engineering
+- Data Cleaning
+     - Normalize pixel values: [0,1]
+     - Reshape to (28,28,1)
+     - Create train/val/test splits
+
+- Feature Engineering
+  -  Image augmentation:
+          - Rotation
+          - Zoom
+          - Translation
+- One-hot encoding for labels
+- Scikit-Learn Pipeline
+         - A hybrid pipeline integrating preprocessing + Keras model:
+         - Normalization
+         - Augmentation
+
+CNN model
+
+Evaluation using cross-validation wrappers
+
+C. Modeling Strategy
+Algorithms to Evaluate (min. 3)
+
+Logistic Regression (baseline)
+
+Random Forest or Gradient Boosting (baseline classical model)
+
+Convolutional Neural Network (primary model)
+
+(Optional) CNN + BatchNorm/Dropout
+
+Cross-Validation
+
+3-fold CV for classical models
+
+Validation split for CNNs (10–20%)
+
+Hyperparameter Tuning
+
+GridSearchCV / RandomizedSearchCV for classical models
+
+For CNNs:
+
+Filters
+
+Kernel size
+
+Learning rate
+
+Batch size
+
+Epochs
+
+Evaluation Metrics
+
+Accuracy (simple to communicate)
+
+F1-score per class (imbalanced classes)
+
+Confusion matrix
+
+Training/validation curves
+
+D. Results Interpretation & Communication
+Turning Technical Results → Business Insights
+
+Identify commonly confused classes
+
+Provide recommendations (e.g., better product photography)
+
+Quantify reduction in manual effort
+
+Estimate ROI of deploying the model
+
+Visualization Plan
+
+Confusion Matrix
+
+Classification Report
+
+Accuracy/Loss Curves
+
+Grad-CAM heatmaps for CNN interpretability
+
+Communication Strategy
+
+Use non-technical language
+
+Present example images and intuitive visuals
+
+Explain what accuracy means in terms of business impact
+
+Provide a clear deployment recommendation
+
+🧩 3. Conceptual Framework
+Solution Pipeline Flowchart
