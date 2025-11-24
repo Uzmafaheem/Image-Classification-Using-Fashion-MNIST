@@ -71,84 +71,93 @@ This project aims to build an automated image classification model to categorize
          - A hybrid pipeline integrating preprocessing + Keras model:
          - Normalization
          - Augmentation
+         - CNN model
+         - Evaluation using cross-validation wrappers
 
-CNN model
+#### C. Modeling Strategy
+- Algorithms to Evaluate (min. 3)
+     - Random Forest or Gradient Boosting (baseline classical model)
+     - Convolutional Neural Network (primary model)
+     -  CNN + BatchNorm/Dropout
 
-Evaluation using cross-validation wrappers
+- Cross-Validation
+    - 3-fold CV for classical models
+    - Validation split for CNNs (10–20%)
+- Hyperparameter Tuning
+   - GridSearchCV / RandomizedSearchCV for classical models
+- For CNNs:
+    - Filters
+    - Kernel size
+    - Learning rate
+    - Batch size
+    - Epochs
+- Evaluation Metrics
+    - Accuracy (simple to communicate)
+    - F1-score per class (imbalanced classes)
+    - Confusion matrix
+    - Training/validation curves
 
-C. Modeling Strategy
-Algorithms to Evaluate (min. 3)
+#### D. Results Interpretation & Communication
+- Turning Technical Results → Business Insights
+      - Identify commonly confused classes
+      - Provide recommendations (e.g., better product photography)
+      - Quantify reduction in manual effort
+      - Estimate ROI of deploying the model
+- Visualization Plan
+    - Confusion Matrix
+    - Classification Report
+    - Accuracy/Loss Curves
+    - Grad-CAM heatmaps for CNN interpretability
 
-Logistic Regression (baseline)
+- Communication Strategy
+      - Use non-technical language
+      - Present example images and intuitive visuals
+      - Explain what accuracy means in terms of business impact
+       - Provide a clear deployment recommendation
 
-Random Forest or Gradient Boosting (baseline classical model)
+#### ⏱ 4. Timeline and Scope
+- Dataset Finalization & Problem Formulation — 1–2 days
+    - Select dataset
+    - Confirm business needs
+    - Set up GitHub repo
+- Exploratory Data Analysis — 3–4 days
+    - Visualize images
+    - Analyze distributions
+    - Document findings
 
-Convolutional Neural Network (primary model)
+- Data Preprocessing — 3–5 days
+       - Normalize/reshape images
+       - Create train/test/validation split
+       - Build augmentation pipeline
+- Model Development — 7 days
+      - Baseline models
+      - Develop CNN models
+      - Cross-validation
+      - Hyperparameter tuning
 
-(Optional) CNN + BatchNorm/Dropout
+- Model Evaluation — 4–5 days
+      - Evaluate accuracy + F1
+      - Create confusion matrix
+      - Analyze errors
+      - Translate results into business metrics
+     - Documentation & Reporting — 3 days
 
-Cross-Validation
+- Write technical report
+      - Build executive slides
+      - Comment and clean code
 
-3-fold CV for classical models
 
-Validation split for CNNs (10–20%)
+#### ⚠️ 5. Challenges & Risks
+- CNN overfitting due to simple dataset
+- Need for GPU acceleration for faster training
+- Difficulty explaining CNN decisions to non-technical teams
+- Augmentation must align with real product image style
+- Scaling model to real e-commerce datasets requires domain adaptation
 
-Hyperparameter Tuning
+#### 📚 6. Deliverables
+- GitHub repository with code + documentation
+- Model training notebook
+- Evaluation metrics & visualizations
+- Executive summary slide deck
+- Final report
 
-GridSearchCV / RandomizedSearchCV for classical models
-
-For CNNs:
-
-Filters
-
-Kernel size
-
-Learning rate
-
-Batch size
-
-Epochs
-
-Evaluation Metrics
-
-Accuracy (simple to communicate)
-
-F1-score per class (imbalanced classes)
-
-Confusion matrix
-
-Training/validation curves
-
-D. Results Interpretation & Communication
-Turning Technical Results → Business Insights
-
-Identify commonly confused classes
-
-Provide recommendations (e.g., better product photography)
-
-Quantify reduction in manual effort
-
-Estimate ROI of deploying the model
-
-Visualization Plan
-
-Confusion Matrix
-
-Classification Report
-
-Accuracy/Loss Curves
-
-Grad-CAM heatmaps for CNN interpretability
-
-Communication Strategy
-
-Use non-technical language
-
-Present example images and intuitive visuals
-
-Explain what accuracy means in terms of business impact
-
-Provide a clear deployment recommendation
-
-🧩 3. Conceptual Framework
-Solution Pipeline Flowchart
